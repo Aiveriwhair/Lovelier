@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Lovelier",
+  "version": "1",
+  "description": "Makes every pages looks more lovely",
+  "author": "william.isabl@gmail.com",  
+  "short_name": "LVLR",
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["script.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": ["activeTab", "storage", "http://*/*", "https://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {              
+      "16": "logo.jpeg",   
+      "24": "logo.jpeg",   
+      "32": "logo.jpeg"    
+    },
+    "default_title": "Lovelier",
+    "default_popup": "./popup/index.html"  
+  }
+}
